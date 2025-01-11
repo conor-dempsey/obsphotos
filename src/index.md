@@ -1,4 +1,7 @@
 ---
+eleventyNavigation:
+    key: Home
+    order: 0
 title: 'Abhishek Bhattachrayya'
 layout: 'layouts/home.html'
 ---
