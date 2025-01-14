@@ -2,22 +2,8 @@
   "autoquotes": null,
   "brandColors": [],
   "corsProxy": "/corsprox",
-  "name": "obsphotos",
+  "name": "obsphotos-custom",
   "sidebar": [
-    {
-      "label": "The sidebar has not yet been configured for this project"
-    },
-    {
-      "icon": "wrench-and-driver",
-      "label": "Configure now",
-      "target": {
-        "name": "Project.Settings",
-        "query": {
-          "tab": "sidebar"
-        }
-      },
-      "onlyPrivileged": true
-    },
     {
       "separator": true
     },
@@ -53,10 +39,69 @@
   "previewUrl": null,
   "languages": [],
   "media": {
-    "advanced": false,
-    "customFields": null,
-    "dir": null,
-    "maxSize": null,
+    "advanced": true,
+    "customFields": [
+      {
+        "type": "text",
+        "default": null,
+        "icon": "text-input",
+        "key": "alt",
+        "label": "Alternative Text",
+        "localised": false,
+        "options": {
+          "wrapping": true,
+          "multiline": false
+        },
+        "validation": {
+          "enforceMinMax": true,
+          "max": null,
+          "min": null,
+          "regex": null,
+          "regexError": null,
+          "required": false,
+          "unit": "length"
+        },
+        "value": null,
+        "version": 1,
+        "visibility": {
+          "hidden": false,
+          "showByValue": {
+            "field": null
+          }
+        }
+      },
+      {
+        "type": "text",
+        "default": null,
+        "icon": "text-input",
+        "key": "title",
+        "label": "Title",
+        "localised": false,
+        "options": {
+          "wrapping": true,
+          "multiline": false
+        },
+        "validation": {
+          "enforceMinMax": true,
+          "max": null,
+          "min": null,
+          "regex": null,
+          "regexError": null,
+          "required": false,
+          "unit": "length"
+        },
+        "value": null,
+        "version": 1,
+        "visibility": {
+          "hidden": false,
+          "showByValue": {
+            "field": null
+          }
+        }
+      }
+    ],
+    "dir": "/src/images",
+    "maxSize": 0.8,
     "outputPath": null,
     "permissions": {
       "everybody": [
