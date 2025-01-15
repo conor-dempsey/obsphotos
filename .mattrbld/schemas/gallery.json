@@ -4,7 +4,7 @@
       "type": "text",
       "default": null,
       "icon": "text-input",
-      "key": "text",
+      "key": "title",
       "label": "Gallery name",
       "localised": false,
       "options": {
@@ -67,7 +67,7 @@
       "type": "date",
       "default": "2025-01-15T15:32:46Z",
       "icon": "calendar",
-      "key": "date",
+      "key": "start",
       "label": "Start date",
       "options": {
         "outputFormat": "iso",
@@ -98,7 +98,7 @@
       "type": "date",
       "default": "2030-12-31",
       "icon": "calendar",
-      "key": "date-1",
+      "key": "end",
       "label": "End date",
       "options": {
         "outputFormat": "iso",
