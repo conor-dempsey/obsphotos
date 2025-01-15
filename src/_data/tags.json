@@ -1,5 +1,4 @@
-[
-    "zanzibar",
-    "ireland",
-    "misr"
-]
+{
+    "tag1": "zanzibar",
+    "tag2": "misr"
+}
