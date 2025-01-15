@@ -1,0 +1,20 @@
+{
+  "allowedTypes": [
+    "jpg",
+    "jpeg"
+  ],
+  "dir": "/src/images/zanzibar",
+  "disableComments": true,
+  "disablePreview": true,
+  "draftByDefault": false,
+  "schemas": [],
+  "linkable": true,
+  "maxSize": null,
+  "permissions": {
+    "everybody": [
+      "everything"
+    ]
+  },
+  "type": "media",
+  "urlTemplate": "/:filepath.content\\.:fileExtension"
+}

@@ -31,6 +31,29 @@
       },
       "onlyPrivileged": true,
       "protected": true
+    },
+    {
+      "separator": true
+    },
+    {
+      "icon": null,
+      "label": "galleries",
+      "target": {
+        "name": "Project.Collection",
+        "params": {
+          "path": "/.mattrbld/collections/galleries.json"
+        }
+      }
+    },
+    {
+      "icon": null,
+      "label": "zanzibar",
+      "target": {
+        "name": "Project.Collection",
+        "params": {
+          "path": "/.mattrbld/collections/zanzibar.json"
+        }
+      }
     }
   ],
   "slugifyOptions": null,
