@@ -98,6 +98,35 @@
             "field": null
           }
         }
+      },
+      {
+        "type": "tags",
+        "default": null,
+        "icon": "tags",
+        "key": "tags",
+        "label": "Tags",
+        "localised": false,
+        "options": {
+          "allowUnsuggested": false,
+          "autocompleteModel": [
+            "zanzibar",
+            "ireland",
+            "misr"
+          ]
+        },
+        "validation": {
+          "max": null,
+          "min": null,
+          "unit": "tags"
+        },
+        "value": null,
+        "version": 1,
+        "visibility": {
+          "hidden": false,
+          "showByValue": {
+            "field": null
+          }
+        }
       }
     ],
     "dir": "/src/images",
