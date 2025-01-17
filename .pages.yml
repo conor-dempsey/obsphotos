@@ -1,7 +1,10 @@
 media: src/images
 content:
-  - name: home_page
+  - name: home
     path: src/index.md
+    type: file
+  - name: about
+    path: src/about.md
     type: file
   - name: galleries
     path: src/galleries
