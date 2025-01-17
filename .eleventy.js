@@ -6,10 +6,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyImageTransformPlugin);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-    eleventyConfig.addCollection("photos", function (collectionAPI) {
-        return collectionAPI.getFilteredByGlob("./.mattrbld/media/*.json");
-    });
-
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
