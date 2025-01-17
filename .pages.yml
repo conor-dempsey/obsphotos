@@ -23,5 +23,5 @@ content:
             options:
               path: src/images
               extensions: [ jpg, jpeg, png ]
-          - name: alt-text
+          - name: alt
             type: string
