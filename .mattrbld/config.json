@@ -44,6 +44,16 @@
           "path": "/.mattrbld/collections/galleries.json"
         }
       }
+    },
+    {
+      "icon": null,
+      "label": "photos",
+      "target": {
+        "name": "Project.Collection",
+        "params": {
+          "path": "/.mattrbld/collections/photos.json"
+        }
+      }
     }
   ],
   "slugifyOptions": null,
