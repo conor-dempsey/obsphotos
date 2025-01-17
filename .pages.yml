@@ -21,7 +21,7 @@ content:
           - name: src
             type: image
             options:
-              path: src/images
+              path: images
               extensions: [ jpg, jpeg, png ]
           - name: alt
             type: string
