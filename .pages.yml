@@ -1,1 +1,18 @@
 media: src/images
+content:
+  - name: home_page
+    path: src/index.md
+    type: file
+  - name: galleries
+    path: src/galleries
+    type: collection
+    fields:
+      - name: title
+        label: Gallery title
+        type: string
+      - name: images
+        type: image
+        list: true
+        options:
+          path: src/images
+          extensions: [ jpg, jpeg, png ]
