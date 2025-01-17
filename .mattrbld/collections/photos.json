@@ -1,6 +1,6 @@
 {
   "allowedTypes": null,
-  "dir": null,
+  "dir": "/src/photos",
   "disableComments": false,
   "disablePreview": false,
   "draftByDefault": false,

@@ -62,7 +62,7 @@
   "previewUrl": null,
   "languages": [],
   "media": {
-    "advanced": true,
+    "advanced": false,
     "customFields": [
       {
         "type": "text",
@@ -152,7 +152,7 @@
         }
       }
     ],
-    "dir": "/src/images",
+    "dir": "/src/photos",
     "maxSize": 0.8,
     "outputPath": null,
     "permissions": {
