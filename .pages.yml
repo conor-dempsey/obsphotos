@@ -15,8 +15,13 @@ content:
         type: string
       - { name: layout, type: string, hidden: true, default: layouts/gallery.html }
       - name: images
-        type: image
+        type: object
         list: true
-        options:
-          path: src/images
-          extensions: [ jpg, jpeg, png ]
+        fields:
+          - name: src
+            type: image
+            options:
+              path: src/images
+              extensions: [ jpg, jpeg, png ]
+          - name: alt-text
+            type: string
