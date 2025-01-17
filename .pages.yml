@@ -13,6 +13,7 @@ content:
       - name: title
         label: Gallery title
         type: string
+      - { name: layout, type: string, hidden: true, default: layouts/gallery.html }
       - name: images
         type: image
         list: true
