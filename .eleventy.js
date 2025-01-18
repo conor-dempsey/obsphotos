@@ -1,4 +1,4 @@
-const {eleventyImageTransformPlugin} = require("@11ty/eleventy-img");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig) {
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
         dir: {
-            input: 'src',
+            input: '.',
             includes: '_includes',
             output: '_site'
         },
