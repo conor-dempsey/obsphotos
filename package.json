@@ -4,6 +4,8 @@
   "main": ".eleventy.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=obsphotos",
+    "build-local": "npx @11ty/eleventy --pathprefix=.",
     "start": "npx @11ty/eleventy --serve"
   },
   "keywords": [],
