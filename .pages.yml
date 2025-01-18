@@ -23,6 +23,12 @@ content:
         label: Gallery title
         type: string
       - { name: layout, type: string, hidden: true, default: layouts/gallery.html }
+      - name: eleventyNavigation
+        label: Navigation
+        type: object
+        fields:
+          - { name: key, label: Key, type: string }
+          - { name: order, label: Order, type: number }
       - name: images
         type: object
         list: true
