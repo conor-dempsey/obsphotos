@@ -6,6 +6,15 @@ content:
   - name: about
     path: about.md
     type: file
+    fields:
+      - { name: layout, type: string, hidden: true, default: layouts/base.njk }
+      - name: eleventyNavigation
+        label: Navigation
+        type: object
+        fields:
+          - { name: key, label: Key, type: string }
+          - { name: order, label: Order, type: number }
+      - { name: body, label: Body, type: rich-text }
   - name: galleries
     path: galleries
     type: collection
