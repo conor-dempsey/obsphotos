@@ -1,13 +1,13 @@
-media: src/images
+media: images
 content:
   - name: home
-    path: src/index.md
+    path: index.md
     type: file
   - name: about
-    path: src/about.md
+    path: about.md
     type: file
   - name: galleries
-    path: src/galleries
+    path: galleries
     type: collection
     fields:
       - name: title
