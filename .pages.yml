@@ -38,5 +38,7 @@ content:
             options:
               path: images
               extensions: [ jpg, jpeg, png ]
+          - name: title
+            type: string
           - name: alt
             type: string
