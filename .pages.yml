@@ -12,7 +12,7 @@ content:
         options:
           path: images
           extensions: [ jpg, jpeg, png ]
-      - { name: layout, type: string, hidden: true, default: layouts/base.njk }
+      - { name: layout, type: string, hidden: true, default: layouts/base.html }
       - name: eleventyNavigation
         label: Navigation
         type: object
