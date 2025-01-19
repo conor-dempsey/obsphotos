@@ -9,6 +9,9 @@ module.exports = async function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
+    eleventyConfig.addPassthroughCopy("./styles/");
+    eleventyConfig.addWatchTarget("./styles/");
+
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
