@@ -1,0 +1,11 @@
+<h2 class="gallery__header">{{title}}</h2>
+<section class="gallery">
+    {{content | safe}}
+    {# loop over images and add #}
+    {% for image in images %}
+        <figure class="gallery__item">
+            <img class="gallery__image" widths="400, 600" height="900" src="{{image.src}}" alt="{{image.alt}}">
+            <figcaption>{{image.title}}</figcaption>
+        </figure>
+    {% endfor %}
+</section>    

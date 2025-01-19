@@ -6,15 +6,17 @@
         <title>{{title}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% set css %}
-            {% include "css/style.css" %}
-        {% endset %}
+        <link rel="stylesheet" href="/styles/style.css">
     </head>
     <body>
-        {% include "partials/nav.html" %}
-        {% block content %}
-        {% endblock %}     
-        {# {% include "partials/footer.html" %} #}
+        <header role="banner">
+            {% include "partials/nav.html" %}    
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %} 
+            {# {% include "partials/footer.html" %} #}
+        </main>
         <script src="" async defer></script>
     </body>
 </html>

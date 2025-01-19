@@ -1,13 +1,4 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-    <article class="gallery">
-        <h1>{{title}}</h1>
-        {{content | safe}}
-        {# loop over images and add #}
-        {% for image in images %}
-            <figure class="gallery__item">
-                <img src="{{image.src}}" alt="{{image.alt}}">
-            </figure>
-        {% endfor %}
-    </article>    
+   {% include "partials/gallery.html" %}
 {% endblock %}
