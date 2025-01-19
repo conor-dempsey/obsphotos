@@ -7,6 +7,11 @@ content:
     path: about.md
     type: file
     fields:
+      - name: obs
+        type: image
+        options:
+          path: images
+          extensions: [ jpg, jpeg, png ]
       - { name: layout, type: string, hidden: true, default: layouts/base.njk }
       - name: eleventyNavigation
         label: Navigation
