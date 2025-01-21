@@ -3,9 +3,9 @@
  ============= */
 
 * {
-  --background-color: #191919;
-  --font-color: #ECDBBA;
-  --link-hover-color: #2D4263;
+  --background-color: #131010;
+  --font-color: #FFF0DC;
+  --link-hover-color: #F0BB78;
 } 
 
 *, *::before, *::after {
@@ -33,6 +33,14 @@ body{
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
 }
 
  a {
@@ -72,10 +80,12 @@ header {
 
 .menu {
   display: flex;
+  margin: 0;
 }
 
 .nav-item {
   margin-inline: 2rem;
+  font-size: 18px;
 }
 
 /* Make images easier to work with */
@@ -94,6 +104,7 @@ figure {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 60px 1fr;
+  align-items: end;
 }
 
 .gallery__header{
@@ -103,18 +114,19 @@ figure {
 .gallery__images {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
   grid-auto-rows: 400px;
-  grid-auto-flow: dense; 
-  align-content: center;
+  /* grid-auto-flow: dense;  */
+  /* align-content: center; */
   padding-top: 2rem;
 }
 
 .gallery__image {
   min-width: 0;
   justify-content: center;
-  align-self: start;
-  justify-self: center;
+  max-width: 600px;
+  /* align-self: start; */
+  /* justify-self: center; */
   margin: 0;
 
   & img { 
