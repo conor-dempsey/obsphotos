@@ -1,6 +1,4 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-    <article>
-        {{content | safe}}
-    </article>    
+   {% include "partials/scroll_gallery.html" %} 
 {% endblock %}

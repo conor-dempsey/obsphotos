@@ -1,13 +1,13 @@
 {% set navigation = collections.all | eleventyNavigation %}
 
 <h1 class="title">
-    <a href="/" rel="home" class="nav-link site-link">{{ site.author.firstName }} {{ site.author.lastName }}</a>
+    <a href="/" rel="home" class="nav__link site-link">{{ site.author.firstName }} {{ site.author.lastName }}</a>
 </h1>
 
 <nav role="navigation" class="main-menu">      
     <ul class="menu">
         {% for link in navigation %}
-            <li class="nav-item"><a href="{{ link.url}}" class="nav-link">{{ link.title }}</a></li>
+            <li class="nav-item"><a href="{{ link.url}}" class="nav__link">{{ link.title }}</a></li>
         {% endfor %}
     </ul> 
 </nav>

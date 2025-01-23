@@ -1,12 +1,13 @@
-<main class="gallery">
-    <h2 class="gallery__header">{{title}}</h2>
-    <section class="gallery__images">
-        {{content | safe}}
-        {# loop over images and add #}
-        {% for image in images %}
-        <figure class="gallery__image">
-            <img src="{{image.src}}" alt="{{image.alt}}">
-        </figure>
-        {% endfor %}
-    </section> 
-</main>   
+<section>
+    <h1 class="gallery__title">{{title}}</h1>
+    <div>
+        <ul class="gallery__tiles">
+            {# loop over images and add #}
+            {% for image in images %}
+            <li class="gallery__tile">
+                <img src="{{image.src}}" alt="{{image.alt}}">
+            </li>
+            {% endfor %}
+    </ul>
+    </div>
+</section> 

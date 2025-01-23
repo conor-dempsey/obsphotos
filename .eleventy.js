@@ -6,7 +6,7 @@ module.exports = async function(eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-        widths: [300, 600, 800],
+        widths: [300, 600],
         htmlOptions: {
 			imgAttributes: {
 				loading: "lazy",
