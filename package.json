@@ -6,7 +6,8 @@
     "build": "npx @11ty/eleventy",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/obsphotos/",
     "start": "npx @11ty/eleventy --serve",
-    "start-hack": "npm run build && npx @11ty/eleventy --serve --incremental --ignore-initial"
+    "start-hack": "npx @11ty/eleventy && npx @11ty/eleventy --serve --incremental --ignore-initial",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
