@@ -6,7 +6,7 @@ module.exports = async function(eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-        widths: [300, 600],
+        widths: [300, 600, 800],
         htmlOptions: {
 			imgAttributes: {
 				loading: "lazy",
@@ -18,8 +18,15 @@ module.exports = async function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-    eleventyConfig.addPassthroughCopy("./styles/");
-    eleventyConfig.addWatchTarget("./styles/");
+    eleventyConfig.addPassthroughCopy("./css/");
+    eleventyConfig.addWatchTarget("./css/");
+
+    eleventyConfig.addPassthroughCopy("./js/");
+    eleventyConfig.addWatchTarget("./js/");
+
+    eleventyConfig.addCollection("galleries", function(collection) {
+        return collection.getFilteredByGlob("galleries/*.md");
+    });
 
     return {
         markdownTemplateEngine: 'njk',
