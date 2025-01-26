@@ -4,8 +4,11 @@
             {# loop over images and add #}
             {% for gallery in collections.gallery %}
                 {% for image in gallery.data.images %}
-                <li class="gallery__image">
-                    <img src="{{image.src}}" alt="{{image.alt}}">
+                <li class="scroller__item">
+                    <figure>
+                        <img src="{{image.src}}" alt="{{image.alt}}">
+                        <figcaption>{{image.title}}: {{image.date}}</figcaption>
+                    </figure>
                 </li>
                 {% endfor %}
             {% endfor %}

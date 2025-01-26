@@ -1,13 +1,11 @@
 <section>
-    <h1 class="gallery__title">{{title}}</h1>
-    <div>
-        <ul class="gallery__tiles">
-            {# loop over images and add #}
-            {% for image in images %}
-            <li class="gallery__tile">
-                <img src="{{image.src}}" alt="{{image.alt}}">
-            </li>
-            {% endfor %}
+    {# <h1 class="gallery__title">{{title}}</h1> #}
+    <ul class="gallery__tiles">
+        {# loop over images and add #}
+        {% for image in images %}
+        <li class="gallery__tile">
+            <img src="{{image.src}}" alt="{{image.alt}}">
+        </li>
+        {% endfor %}
     </ul>
-    </div>
 </section> 
