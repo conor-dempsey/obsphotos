@@ -9,14 +9,16 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-        <header role="banner">
-            {% include "partials/nav.html" %}    
-        </header>
-        <main>
-            {% block content %}
-            {% endblock %} 
-        </main>
-            {# {% include "partials/footer.html" %} #}
+        <div class="wrapper--xl">
+            <header role="banner">
+                {% include "partials/nav.html" %}
+            </header>
+            <main class="padding__block-2">
+                {% block content %}
+                {% endblock %}
+            </main>
+                {# {% include "partials/footer.html" %} #}
+        </div>
         <script src="/js/main.js" async defer></script>
     </body>
 </html>
