@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.html
+layout: layouts/about.html
 title: Abhishek Bhattacharyya
 eleventyNavigation:
   key: About

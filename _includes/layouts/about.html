@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+{% block content%}
+    <article class="post__article">
+        <div class="about__profile-pic-container">
+        {%for image in images%}
+            <img src="{{image.src}}" alt="{{image.alt}}" class="about__profile-pic">
+        {%endfor%}
+        </div>
+        <div class="post__text">{{content | safe}}</div>
+    </article> 
+{% endblock %}
