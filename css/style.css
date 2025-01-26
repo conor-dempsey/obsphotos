@@ -32,6 +32,9 @@ body{
   font-feature-settings: "ss07", "ss01";
   color: var(--font-color);
   padding: 2rem;
+
+  overflow-y: hidden;
+
 }
 
 
@@ -92,6 +95,7 @@ a {
 
   width: min(var(--wrapper-max-width), 100% - 2*var(--wrapper-padding));
   margin-inline: auto;
+
 }
 
 /* Make images easier to work with */
@@ -178,11 +182,12 @@ header {
 
 .scroller {
   max-width: 2000px;
-  min-height: 700px;
-  max-height: 600px;
+  --scroller-min-height: 90dvh;
+  min-height: var(--scroller-min-height);
+  height: 100%;
 }
 
-.scroller__inner {
+.scroll__track {
   /* position: absolute; */
   width: 100%;
   display: flex;
@@ -191,11 +196,24 @@ header {
   gap: var(--gallery-gap);
 }
 
-.scroller[data-animated="true"] {
-  overflow: hidden;
+.scroller__item {
+  min-width: 700px;
+  max-height: calc(0.75 * var(--scroller-min-height));
+
+  & img {
+    object-fit: cover;
+    max-height: 100%;
+  }
 }
 
-.scroller[data-animated="true"] .scroller__inner {
+
+.scroller[data-animated="true"] {
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.scroller[data-animated="true"] .scroll__track {
   width: fit-content;
   flex-wrap: nowrap;
   animation: 
@@ -232,14 +250,6 @@ header {
   }
 }
 
-.scroller__item {
-  min-width: 700px;
-  min-height: 800px;
-
-  & img {
-    max-height: 100%;
-  }
-}
 
 /*  ============
      Components
