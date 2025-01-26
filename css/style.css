@@ -3,9 +3,9 @@
  ============= */
 
 * {
-  --background-color: #131010;
-  --font-color: #FFF0DC;
-  --link-hover-color: #F0BB78;
+  --background-color: #1B1A17;
+  --font-color: #F0E3CA;
+  --link-hover-color: #EAAC7F;
   --site-title-font-size: 1.5rem;
   --nav-link-font-size: 1.25rem;
 } 
@@ -163,17 +163,19 @@ header {
   font-weight: 400;
 }
 
-.about__profile-pic-container {
-  max-width: 300px;
-}
-.about__profile-pic img {
-  width: 100%;
-}
-
 .post__article {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 2em;
+}
+
+.about__profile-pic-container {
+  min-width: 200px;
+  max-width: 500px;
+}
+.about__profile-pic img {
+  width: 100%;
 }
 
 .post__text {
