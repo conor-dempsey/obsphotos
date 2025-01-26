@@ -1,14 +1,12 @@
 <section>
     <div class="scroller" data-direction="left" data-speed="slow">
-        <ul class="scroller__inner">
+        <ul class="scroll__track">
             {# loop over images and add #}
             {% for gallery in collections.gallery %}
                 {% for image in gallery.data.images %}
                 <li class="scroller__item">
-                    <figure>
-                        <img src="{{image.src}}" alt="{{image.alt}}">
-                        <figcaption>{{image.title}}: {{image.date}}</figcaption>
-                    </figure>
+                    <img src="{{image.src}}" alt="{{image.alt}}">
+                    <p> {{image.title}}, {{image.date | date}} </p>
                 </li>
                 {% endfor %}
             {% endfor %}

@@ -24,9 +24,11 @@ module.exports = async function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./js/");
     eleventyConfig.addWatchTarget("./js/");
 
-    eleventyConfig.addCollection("galleries", function(collection) {
+    eleventyConfig.addCollection("gallery", function(collection) {
         return collection.getFilteredByGlob("galleries/*.md");
     });
+
+    eleventyConfig.addFilter("date", require("./filters/date.js"));
 
     return {
         markdownTemplateEngine: 'njk',

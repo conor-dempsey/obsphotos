@@ -2,14 +2,28 @@
 const scrollers = document.querySelectorAll('.scroller');
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
     addAnimation();
+
+// const animationHeightQuery = window.matchMedia('(max-width: 768px)')
+
+// function handleMobileChange(e) {
+//     if(e.matches) {
+//         addAnimation();
+//         console.log('media query matched')
+//     }
+// };
+
+// animationHeightQuery.addEventListener("resize", handleMobileChange)
+// handleMobileChange(animationHeightQuery)
+
 }
 
 // addDragable();
 
 function addDragable() {
     scrollers.forEach(scroller => {
-        const scrollerInner = scroller.querySelector(".scroller__inner");
+        const scrollerInner = scroller.querySelector(".scroll__track");
         
         let pressed = false;
         let startx;
@@ -50,7 +64,7 @@ function addAnimation() {
     scrollers.forEach(scroller => {
         scroller.setAttribute("data-animated", true);
 
-        const scrollerInner = scroller.querySelector(".scroller__inner");
+        const scrollerInner = scroller.querySelector(".scroll__track");
         const scrollerContent = Array.from(scrollerInner.children);
 
         scrollerContent.forEach(item => {
