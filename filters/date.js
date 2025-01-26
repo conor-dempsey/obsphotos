@@ -7,5 +7,5 @@ const { DateTime } = require("luxon");
 // List of supported tokens: https://moment.github.io/luxon/docs/manual/formatting.html#table-of-tokens
 
 module.exports = (dateObj, format = 'LLLL d, y') => {
-  return DateTime.fromISO(dateObj.toISOString(), { zone: "Europe/Amsterdam", locale: "en" }).toLocaleString(DateTime.DATE_FULL);
+  return DateTime.fromISO(dateObj.toISOString(), { zone: "Europe/Amsterdam", locale: "en" }).toFormat('yyyy');
 };
