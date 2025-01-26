@@ -47,3 +47,5 @@ content:
             type: string
           - name: alt
             type: string
+          - name: date
+            type: date
