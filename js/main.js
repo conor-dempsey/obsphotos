@@ -3,21 +3,38 @@ const scrollers = document.querySelectorAll('.scroller');
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
-    addAnimation();
+    function go(){
+        // check if animation has been added
+        let animationAdded = scrollers[0].getAttribute("data-animated");
 
-// const animationHeightQuery = window.matchMedia('(max-width: 768px)')
+        // check if the window is wider than 768px
+        if (document.documentElement.clientWidth > 420) {
+            // if so add the animation if it hasn't been added
+            if (animationAdded === "false" || animationAdded === null) {
+                addAnimation();
+            };
+            // remove the class 'small-screen' from the body
+            document.querySelector('body').classList.remove('small-screen');
 
-// function handleMobileChange(e) {
-//     if(e.matches) {
-//         addAnimation();
-//         console.log('media query matched')
-//     }
-// };
+            // scroll to the top
+            window.scrollTo(0, 0);
+        } else {
+            // check if animation has been added
+            // if so remove the animation
+            if (animationAdded === "true") {
+                removeAnimation();
+            };
+            // add the class 'small-screen' to the body
+            document.querySelector('body').classList.add('small-screen');   
+        }
+    };
+    // run the function on page load
+    go();
 
-// animationHeightQuery.addEventListener("resize", handleMobileChange)
-// handleMobileChange(animationHeightQuery)
-
-}
+    // run the function on resize
+    window.addEventListener('resize', go);
+    
+};
 
 // addDragable();
 
@@ -64,14 +81,34 @@ function addAnimation() {
     scrollers.forEach(scroller => {
         scroller.setAttribute("data-animated", true);
 
-        const scrollerInner = scroller.querySelector(".scroll__track");
+        const scrollerInner = scroller.querySelector(".scroll__track");        
         const scrollerContent = Array.from(scrollerInner.children);
+        console.log('adding animation');
 
         scrollerContent.forEach(item => {
             const duplicatedItem = item.cloneNode(true);
             duplicatedItem.setAttribute('aria-hidden', true);
+            // add a duplicate class to the duplicated item
+            duplicatedItem.classList.add("duplicate");
             scrollerInner.appendChild(duplicatedItem);
         });
+    });
+};
+
+
+function removeAnimation() {
+    scrollers.forEach(scroller => {
+        // check that data-animated is true and proceed if so, otherwise return
+        if (scroller.getAttribute("data-animated") === "false") return;
+
+        scroller.setAttribute("data-animated", false);
+
+        const scrollerInner = scroller.querySelector(".scroll__track");
+        const scrollerContent = Array.from(scrollerInner.children);
+
+        // find all of the duplicated items and remove them
+        const duplicatedItems = scrollerInner.querySelectorAll(".duplicate");
+        duplicatedItems.forEach(item => item.remove());
     });
 };
 
