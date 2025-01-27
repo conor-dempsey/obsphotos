@@ -34,9 +34,7 @@ body {
   padding: 2rem;
 
   overflow-y: hidden;
-
 }
-
 
 main {
   min-width: 0;
@@ -114,6 +112,21 @@ header {
   column-gap: 3rem;
 }
 
+body.small-screen {
+  overflow-y: scroll;
+}
+
+.small-screen header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--background-color);
+}
+
+.small-screen .scroller li {
+  padding-block: 1rem;
+}
+
 .primary-navigation ul {
   display: flex;
   list-style: none;
@@ -182,14 +195,27 @@ header {
   vertical-align: top;
 }
 
-.scroller {
+
+/* default scroller settings when animation is off */
+/* .scroller {
+  max-width: 100%;
+}
+
+.scroll__track {
+  width: 100%;
+  display: grid;
+  gap: 0.75rem;
+} */
+
+/*  scroller settings when animation is on */
+.scroller[data-animated="true"] {
   max-width: 2000px;
   --scroller-min-height: 90dvh;
   min-height: var(--scroller-min-height);
   height: 100%;
 }
 
-.scroll__track {
+.scroller[data-animated="true"] .scroll__track {
   /* position: absolute; */
   width: 100%;
   display: flex;
@@ -198,7 +224,7 @@ header {
   gap: var(--gallery-gap);
 }
 
-.scroller__item {
+.scroller[data-animated="true"] .scroller__item {
   min-width: 700px;
   max-height: calc(0.75 * var(--scroller-min-height));
 
@@ -206,8 +232,7 @@ header {
     object-fit: cover;
     max-height: 100%;
   }
-}
-
+}  
 
 .scroller[data-animated="true"] {
   /* overflow: hidden; */
@@ -251,6 +276,11 @@ header {
     transform: translate(calc(-50% - (var(--gallery-gap)/2)));
   }
 }
+
+
+
+
+
 
 
 /*  ============
