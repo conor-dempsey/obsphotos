@@ -58,10 +58,6 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
     };
     
-        };
-
-    };
-    
     // run the function on page load
     resizeHandler();    
 
