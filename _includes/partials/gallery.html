@@ -4,7 +4,9 @@
         {# loop over images and add #}
         {% for image in images %}
         <li class="gallery__tile">
-            <img src="{{image.src}}" alt="{{image.alt}}">
+            <a href="/images/{{ image.src | slugify }}">
+                <img src="{{image.src}}" alt="{{image.alt}}">
+            </a>
         </li>
         {% endfor %}
     </ul>

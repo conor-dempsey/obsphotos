@@ -1,6 +1,8 @@
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+const util = require('util');
+
 module.exports = async function(eleventyConfig) {
 
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
@@ -15,6 +17,11 @@ module.exports = async function(eleventyConfig) {
 			pictureAttributes: {}
 		},
     });
+
+    eleventyConfig.addFilter('debug', function(collection) {
+        return util.inspect(collection, { showHidden: false, depth: null });
+    });
+
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
@@ -35,9 +42,32 @@ module.exports = async function(eleventyConfig) {
         return collection.getFilteredByGlob("galleries/*.md");
     });
 
+    eleventyConfig.addCollection("allImages", function(collectionApi) {
+        let images = [];
+
+        collectionApi.getFilteredByGlob("galleries/*.md").forEach((gallery) => {
+            console.log("📂 Processing gallery:", gallery.inputPath);
+            if (gallery.data.images) {
+            gallery.data.images.forEach(image => {
+                console.log("🖼 Found image:", image.src);
+                images.push({
+                ...image,
+                gallery: gallery.fileSlug, // Keep track of the source gallery
+                });
+            });
+            } else {
+            console.log("⚠ No images in", gallery.inputPath);
+            }
+        });
+
+        console.log("✅ Final images collection:", JSON.stringify(images, null, 2));
+        return images;
+    });
+
     eleventyConfig.addFilter("date", require("./filters/date.js"));
 
     return {
+        templateFormats: ["html", "njk", "md", "json"],
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
