@@ -112,7 +112,7 @@ header {
   column-gap: 3rem;
 }
 
-body.small-screen {
+body.yscroll {
   overflow-y: scroll;
 }
 
