@@ -24,6 +24,13 @@ module.exports = async function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./js/");
     eleventyConfig.addWatchTarget("./js/");
 
+    // Create a copy of Splide files in your output directory
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/@splidejs/splide/dist/css": "/css/splide",
+        "node_modules/@splidejs/splide/dist/js": "/js/splide",
+        "node_modules/@splidejs/splide-extension-auto-scroll/dist/js": "/js/splide-extension-auto-scroll",
+    });
+
     eleventyConfig.addCollection("gallery", function(collection) {
         return collection.getFilteredByGlob("galleries/*.md");
     });

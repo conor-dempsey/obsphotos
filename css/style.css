@@ -195,91 +195,11 @@ body.yscroll {
   vertical-align: top;
 }
 
-
-/* default scroller settings when animation is off */
-/* .scroller {
-  max-width: 100%;
+.splide__slide img {
+  width: 100%; 
+  height: 95%; 
+  object-fit: cover; /* Maintain aspect ratio without stretching */
 }
-
-.scroll__track {
-  width: 100%;
-  display: grid;
-  gap: 0.75rem;
-} */
-
-/*  scroller settings when animation is on */
-.scroller[data-animated="true"] {
-  max-width: 2000px;
-  --scroller-min-height: 90dvh;
-  min-height: var(--scroller-min-height);
-  height: 100%;
-}
-
-.scroller[data-animated="true"] .scroll__track {
-  /* position: absolute; */
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  --gallery-gap: 0.75em;
-  gap: var(--gallery-gap);
-}
-
-.scroller[data-animated="true"] .scroller__item {
-  min-width: 700px;
-  max-height: calc(0.75 * var(--scroller-min-height));
-
-  & img {
-    object-fit: cover;
-    max-height: 100%;
-  }
-}  
-
-.scroller[data-animated="true"] {
-  /* overflow: hidden; */
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.scroller[data-animated="true"] .scroll__track {
-  width: fit-content;
-  flex-wrap: nowrap;
-  animation: 
-    scroll 
-    var(--_animation-duration, 80s) 
-    var(--_animation-direction, forwards)
-    linear 
-    infinite;
-}
-
-.scroller[data-direction="right"] {
-  --_animation-direction: reverse;
-}
-
-.scroller[data-direction="left"] {
-  --_animation-direction: forwards;
-}
-
-.scroller[data-speed="slow"] {
-  --_animation-duration: 360s;
-}
-
-.scroller[data-speed="med"] {
-  --_animation-duration: 60s;
-}
-
-.scroller[data-speed="fast"] {
-  --_animation-duration: 20s;
-}
-
-@keyframes scroll {
-  to {
-    transform: translate(calc(-50% - (var(--gallery-gap)/2)));
-  }
-}
-
-
-
-
 
 
 
