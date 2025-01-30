@@ -20,7 +20,6 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         const scrollersPresent = scrollers.length > 0;
 
         if (document.documentElement.clientWidth < 420) {
-            console.log("small screen");
             // add the class 'small-screen' to the body
             document.querySelector('body').classList.add('small-screen');
             // add the class 'yscroll' to the body
@@ -37,9 +36,9 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         } else { // case for large screens
             // if scrollers are present 
             if (scrollersPresent) {
+                let animationAdded = scrollers[0].getAttribute("data-animated");
                 if (animationAdded === "false" || animationAdded === null) {
                     addAnimation();
-                    console.log('added animation');
 
                     // scroll to the top
                     window.scrollTo(0, 0);
@@ -59,11 +58,15 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
     };
     
+        };
+
+    };
+    
     // run the function on page load
-    console.log('running size check first time');
     resizeHandler();    
 
     // run the function on resize
+    window.addEventListener('resize', resizeHandler);
     window.addEventListener('resize', resizeHandler);
     
 };
@@ -102,7 +105,6 @@ function addDragable() {
             e.preventDefault();
             x = e.offsetX;
             // scrollerInner.style.left;
-            console.log(scrollerInner)
         });
 
 
@@ -115,7 +117,6 @@ function addAnimation() {
 
         const scrollerInner = scroller.querySelector(".scroll__track");        
         const scrollerContent = Array.from(scrollerInner.children);
-        console.log('adding animation');
 
         scrollerContent.forEach(item => {
             const duplicatedItem = item.cloneNode(true);
