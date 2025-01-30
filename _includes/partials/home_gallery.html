@@ -1,9 +1,3 @@
-{% set carouselImages = [] %}
-{% for gallery in collections.gallery %}
-  {% for image in gallery.data.images %}
-    {% set carouselImages = carouselImages.concat([image]) %}
-  {% endfor %}
-{% endfor %}
-
+{% set carouselImages = collections.allImages %}
 
 {% include "partials/carousel.html" %}

@@ -187,18 +187,76 @@ body.yscroll {
   min-width: 200px;
   max-width: 500px;
 }
-.about__profile-pic img {
-  width: 100%;
-}
 
 .post__text {
   vertical-align: top;
 }
 
 .splide__slide img {
-  width: 100%; 
   height: 95%; 
   object-fit: cover; /* Maintain aspect ratio without stretching */
+}
+
+.small-image-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.standalone-photo {
+  height: 80vh;
+  width: auto;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.image-wrapper {
+  grid-column: 2;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  gap: 1rem;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust size */
+  height: 80px; /* Taller for better clickability */
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.5; /* Default faded look */
+}
+
+.arrow::before {
+  content: "";
+  display: block;
+  width: 16px; /* Arrow size */
+  height: 16px;
+  border-left: 4px solid white;  /* Arrow thickness */
+  border-bottom: 4px solid white;
+  transform: rotate(45deg); /* Creates the arrow shape */
+}
+
+.arrow.left {
+  left: 10px; /* Position near the left */
+}
+
+.arrow.right {
+  right: 10px; /* Position near the right */
+  transform: rotate(180deg); /* Flip for right arrow */
+}
+
+/* Hover Effect */
+.arrow:hover {
+  opacity: 1; /* Makes it more visible */
 }
 
 

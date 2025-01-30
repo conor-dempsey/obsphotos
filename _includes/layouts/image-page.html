@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="grid-container">
+
+ {% if prevImage %}
+    <a href="{{ prevImage }}/index.html" class="arrow left align-self-center"></a>
+  {% endif %}
+<div class="image-wrapper">
+  <img class="standalone-photo" src="{{ image.src }}" alt="{{ image.alt }}">
+</div>
+
+  {% if nextImage %}
+    <a href="{{ nextImage }}/index.html" class="arrow right align-self-center"></a>
+  {% endif %}
+  </div>
+  
+{% endblock %}
