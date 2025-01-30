@@ -211,6 +211,7 @@ body.yscroll {
 
 .image-wrapper {
   grid-column: 2;
+  justify-self: center;
 }
 
 .grid-container {
