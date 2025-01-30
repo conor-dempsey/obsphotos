@@ -63,6 +63,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
     // run the function on resize
     window.addEventListener('resize', resizeHandler);
+    window.addEventListener('resize', resizeHandler);
     
 };
 
@@ -127,6 +128,7 @@ function removeAnimation() {
     scrollers.forEach(scroller => {
         // check that data-animated is true and proceed if so, otherwise return
         if (scroller.getAttribute("data-animated") === "false") return;
+        console.log('removing animation');
 
         scroller.setAttribute("data-animated", false);
 
