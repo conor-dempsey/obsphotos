@@ -1,0 +1,54 @@
+<!-- _includes/partials/carousel.html -->
+<div class="splide" id="splide-{{ id }}">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {% for image in carouselImages %}
+        <li class="splide__slide">
+          <img 
+            src="{{ image.src }}" 
+            alt="{{ image.alt }}"
+          >
+          <p>{{ image.title }} - {{ image.date | date}} </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{# 
+  <button class="splide__toggle" type="button">
+	  <span class="splide__toggle__play">Play</span>
+	  <span class="splide__toggle__pause">Pause</span>
+  </button> #}
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Splide('#splide-{{ id }}', {
+        type: 'loop',
+        height: '80vh',
+        cover: true,
+        drag: 'free',
+        keyboard: 'global',
+        perPage: 2,
+        autoplay: false,
+        interval: 3000,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        arrows: false,
+        pagination: false,
+        gap: '1rem',
+        autowidth: true, 
+        breakpoints: {
+            630: { // When screen width is ≤ 768px
+            direction: "ttb", // Switch to vertical scrolling (top-to-bottom)
+            gap: '2.5rem'
+            },
+        },
+        autoScroll: {
+            speed: 0.2,
+            autoStart: true,
+            pauseOnHover: false,
+        }, 
+    }).mount(window.splide.Extensions);
+  });
+</script>
